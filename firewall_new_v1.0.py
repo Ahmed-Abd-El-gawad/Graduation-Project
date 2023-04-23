@@ -16,7 +16,7 @@
 
 import logging
 import json
-
+import jwt
 from ryu.app.wsgi import ControllerBase
 from ryu.app.wsgi import Response
 from ryu.app.wsgi import WSGIApplication
@@ -192,6 +192,21 @@ VLANID_NONE = 0
 VLANID_MIN = 2
 VLANID_MAX = 4094
 COOKIE_SHIFT_VLANID = 32
+
+
+def check_jwt(token):
+    secret_key = 'SuperSecr3tK3y2023!K@D#'
+    # Define a JWT token to decode
+    try:
+        # Decode the token using the secret key
+        decoded_token = jwt.decode(token, secret_key, algorithms=['HS256'])
+        return True
+    except jwt.ExpiredSignatureError:
+        return False
+    except jwt.InvalidSignatureError:
+        return False
+    except:
+        return False
 
 
 class RestFirewallAPI(app_manager.RyuApp):
@@ -606,7 +621,7 @@ class Firewall(object):
           print(args)
           print(func.__name__)
           if func.__name__ not in ['get_status' , 'get_rules' , 'set_disable_flow' ,'set_log_enable','set_enable_flow','get_log_status'] :
-            if len(args) >1 and 'Auth' in  args[1].keys() and args[1]['Auth'] == "admin" :
+            if len(args) >1 and 'Auth' in  args[1].keys() and check_jwt(args[1]['Auth']) :
               FirewallController._LOGGER.info('Successfully Authenticated')
             else :
               FirewallController._LOGGER.info('no Authenticated')

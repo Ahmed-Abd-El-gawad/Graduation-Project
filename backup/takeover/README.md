@@ -16,7 +16,7 @@
 2. Run the bash scipt that edit the configuration of the proxy (to edit it go [down](#json))
   ```bash
   sudo .//Graduation-Project/backup/takeover/run
-  ``
+  ```
 3. To verify the vaildity of the haproxy.cfg file 
   run
   ```bash

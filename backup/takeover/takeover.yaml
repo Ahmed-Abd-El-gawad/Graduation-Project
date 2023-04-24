@@ -1,0 +1,14 @@
+frontend: 
+  ip: 192.168.38.137
+  port: 4444
+controllers:
+  number: 3
+  controller1:
+    ip: 192.168.38.128
+    port: 6633 
+  controller2: 
+    ip: 192.168.38.129
+    port: 6633
+  controller3:
+    ip: 192.168.38.130
+    port: 6633

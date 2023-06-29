@@ -15,29 +15,9 @@
 1. Make sure you install haproxy and jq 
 2. Run the bash scipt that edit the configuration of the proxy (to edit it go [down](#json))
   ```bash
-  sudo .//Graduation-Project/backup/takeover/run
+  sudo ./Graduation-Project/backup/takeover/run
   ```
-3. To verify the vaildity of the haproxy.cfg file 
-  run
-  ```bash
-  haproxy -c -f /etc/haproxy/haproxy.cfg
-  ```
-4. to start the haproxy service
-  run 
-  ```bash
-  systemctl restart haproxy.service
-  ```
-  ```bash
-  systemctl reload haproxy.service
-  ```
-  ```bash
-  systemctl restart haproxy.service
-  ```
-5. To check that the servie is active
-  ```bash
-  systemctl status haproxy.service
-  ```
-6. You should be ready now
+3. You should be ready now
 
 <a name="json"></a>
 ***welcome down :)***

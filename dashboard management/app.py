@@ -160,7 +160,7 @@ def vpn_status():
     # with open('data.json') as file:
     #     data = json.load(file)
 
-    auth_token = "7xdN3vmzBYrlvDwiNa5Ecqtf8GW1uETT"
+    auth_token = "SECRET_AUTH"
     network_id = "c7c8172af142f61e"
     headers = {
     "Authorization": "token " + auth_token,}

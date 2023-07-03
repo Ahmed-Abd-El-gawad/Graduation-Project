@@ -1,3 +1,14 @@
 
+load balance
+
+m1
 docker swarm init --advertise-addr 192.168.38.148:2377 --listen-addr 192.168.38.148:2377
+
+join other managers and workers
+
+docker service create --name ryu -p 6633:6633 -p 6653:6653 -p 8080:8080 --replicas 2 ahmedabdelgawad23/gp-ryu:latest ryu-manager --ofp-tcp-listen-port 6633 ryu.app.simple_switch_13
+
+------------------------------------------------------------------------------
+
+
 

@@ -4,4 +4,4 @@ This is a part of Graduation Project
 
 # Note
 
-***The Book will be uploaded soon***
+***The Book is uploaded for more info***
